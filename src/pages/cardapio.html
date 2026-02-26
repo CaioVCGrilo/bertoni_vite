@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+
+    <!-- Cache Control - Forçar sempre revalidação -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- Primary Meta Tags -->
+    <title>Cardápio - Bertoni Doces & Café | Bolos, Tortas e Doces em Pinhais PR</title>
+    <meta name="title" content="Cardápio - Bertoni Doces & Café | Bolos, Tortas e Doces em Pinhais PR">
+    <meta name="description" content="Confira o cardápio completo da Bertoni Doces & Café: bolos artesanais, tortas, doces finos, cafés especiais, salgados e muito mais. Delivery disponível em Pinhais e região.">
+    <meta name="keywords" content="cardápio bertoni, preços bolos pinhais, menu confeitaria pinhais, doces pinhais cardápio, café pinhais menu, tortas pinhais">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bertonidoces.com.br/src/pages/cardapio.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bertonidoces.com.br/src/pages/cardapio.html">
+    <meta property="og:title" content="Cardápio - Bertoni Doces & Café">
+    <meta property="og:description" content="Confira nosso cardápio completo: bolos artesanais, tortas, doces finos, cafés especiais e salgados. Delivery disponível.">
+    <meta property="og:image" content="https://bertonidoces.com.br/assets/images/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bertonidoces.com.br/src/pages/cardapio.html">
+    <meta property="twitter:title" content="Cardápio - Bertoni Doces & Café">
+    <meta property="twitter:description" content="Confira nosso cardápio completo: bolos artesanais, tortas, doces finos, cafés especiais e salgados.">
+
+    <link rel="icon" href="/assets/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="/src/styles/style.css">
+
+    <!-- Schema.org for Menu -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Menu",
+      "name": "Cardápio Bertoni Doces & Café",
+      "description": "Cardápio completo com bolos, tortas, doces, cafés e salgados",
+      "provider": {
+        "@type": "Bakery",
+        "name": "Bertoni Doces & Café",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Rio Trombetas, 568",
+          "addressLocality": "Pinhais",
+          "addressRegion": "PR",
+          "addressCountry": "BR"
+        }
+      }
+    }
+    </script>
+</head>
+<body class="antialiased">
+<!-- Header -->
+<header class="h-[10vh] min-h-[70px] bg-bertoni-darker border-b border-stone-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto h-full px-4 md:px-8 flex items-center justify-between">
+        <div class="flex items-center">
+            <img alt="Bertoni Doces & Café" width="140" height="70" decoding="async" class="object-contain drop-shadow-sm w-[120px] md:w-[140px] h-auto" src="/assets/images/logo.png"/>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a href="/" class="text-stone-200 hover:text-bertoni-gold transition-colors duration-300 uppercase tracking-widest text-xs font-bold">Home</a>
+            <a class="text-bertoni-gold transition-colors duration-300 uppercase tracking-widest text-xs font-bold">Cardápio</a>
+            <a href="/src/pages/sobre.html" class="text-stone-200 hover:text-bertoni-gold transition-colors duration-300 uppercase tracking-widest text-xs font-bold">Sobre</a>
+            <a href="#contato" class="text-stone-200 hover:text-bertoni-gold transition-colors duration-300 uppercase tracking-widest text-xs font-bold">Contato</a>
+            <a href="https://vagas.bertonidoces.com.br" target="_blank" rel="noopener noreferrer" class="text-stone-400 hover:text-bertoni-gold transition-colors duration-300 uppercase tracking-widest text-[10px] font-medium">Trabalhe Conosco</a>
+            <a href="https://encomendas.bertonidoces.com.br" target="_blank" class="bg-bertoni-gold text-black px-5 py-2.5 hover:bg-opacity-90 hover:shadow-lg transition-all duration-300 uppercase tracking-widest text-[10px] font-bold rounded">Encomendas</a>
+        </nav>
+        <button id="mobile-menu-button" class="md:hidden flex flex-col gap-1.5 p-2 hover:opacity-70 transition-opacity" aria-label="Menu">
+            <span class="block w-6 h-0.5 bg-stone-200 transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-stone-200 transition-all duration-300"></span>
+            <span class="block w-6 h-0.5 bg-stone-200 transition-all duration-300"></span>
+        </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden bg-bertoni-darker border-t border-stone-800 overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+        <nav class="flex flex-col py-4">
+            <a href="/" class="text-stone-200 hover:bg-stone-900 hover:text-bertoni-gold transition-all duration-200 uppercase tracking-widest text-xs font-bold py-4 px-6 border-b border-stone-800">Home</a>
+            <a class="text-bertoni-gold hover:bg-stone-900 transition-all duration-200 uppercase tracking-widest text-xs font-bold py-4 px-6 border-b border-stone-800">Cardápio</a>
+            <a href="/src/pages/sobre.html" class="text-stone-200 hover:bg-stone-900 hover:text-bertoni-gold transition-all duration-200 uppercase tracking-widest text-xs font-bold py-4 px-6 border-b border-stone-800">Sobre</a>
+            <a href="#contato" class="text-stone-200 hover:bg-stone-900 hover:text-bertoni-gold transition-all duration-200 uppercase tracking-widest text-xs font-bold py-4 px-6 border-b border-stone-800">Contato</a>
+            <a href="https://vagas.bertonidoces.com.br" target="_blank" rel="noopener noreferrer" class="text-stone-400 hover:bg-stone-900 hover:text-bertoni-gold transition-all duration-200 uppercase tracking-widest text-[10px] font-medium py-4 px-6 border-b border-stone-800">Trabalhe Conosco</a>
+            <a href="https://encomendas.bertonidoces.com.br" target="_blank" class="bg-bertoni-gold text-black hover:bg-opacity-90 transition-all duration-200 uppercase tracking-widest text-xs font-bold py-4 px-6 text-center mx-4 mt-4 rounded shadow-md">Encomendas</a>
+        </nav>
+    </div>
+</header>
+
+<main class="min-h-screen bg-bertoni-dark" id="home">
+
+    <!-- PDF Viewer Section -->
+    <section id="cardapio" class="bg-bertoni-dark py-8 md:py-20">
+        <div class="w-full max-w-7xl mx-auto px-4">
+            <!-- Título Minimalista -->
+            <div class="text-center mb-5 mt-2.5">
+                <div class="inline-block">
+                    <h2 style="margin-top: 12px;" class="text-2xl md:text-3xl text-stone-200 font-light tracking-[0.3em] mb-3 uppercase">
+                        Cardápio
+                    </h2>
+                    <div class="h-[1px] bg-gradient-to-r from-transparent via-bertoni-gold to-transparent opacity-60"></div>
+                </div>
+            </div>
+
+            <div id="pdf-container" class="relative rounded-lg mx-auto">
+                <!-- Loading -->
+                <div id="pdf-loading" class="absolute inset-0 bg-stone-900 z-50 flex flex-col items-center justify-center rounded-lg">
+                    <div class="flex flex-col items-center gap-6 px-4 max-w-md">
+                        <div class="relative">
+                            <div class="w-20 h-20 border-8 border-stone-700 border-t-bertoni-gold rounded-full animate-spin"></div>
+                        </div>
+                        <div class="text-center w-full">
+                            <p id="loading-text" class="text-stone-300 tracking-widest uppercase text-sm font-bold mb-4">
+                                Carregando Cardápio
+                            </p>
+                            <!-- Barra de Progresso -->
+                            <div class="w-full bg-stone-800 rounded-full h-3 overflow-hidden">
+                                <div id="progress-bar" class="h-full bg-bertoni-gold transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                            <p id="progress-text" class="text-stone-500 text-xs mt-2">0%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PDF Pages will be rendered here -->
+                <div id="pdf-pages" class="scrollbar-hide"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <section class="bg-bertoni-dark py-4">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <p class="text-xs text-stone-400 italic">Todos os preços e condições comerciais estão sujeitos a alteração em loja e aplicativos de entrega sem aviso prévio.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="bg-bertoni-darker text-stone-300 py-16 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <!-- Endereço -->
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-bertoni-gold uppercase tracking-widest text-xs mb-4 font-bold">Visite-nos</h3>
+                        <p class="text-base font-light mb-1 text-stone-200">Rua Rio Trombetas, 568</p>
+                        <p class="text-sm text-stone-400">Weissópolis, Pinhais - PR</p>
+                        <p class="text-sm text-stone-500 mt-2">CEP 83322-280</p>
+                    </div>
+                    <div class="h-48 w-full rounded-lg overflow-hidden border border-stone-800">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.4837947891934!2d-49.18562!3d-25.4444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce3e1e6c3c3c3%3A0x0!2zMjXCsDI2JzM5LjgiUyA0OcKwMTEnMDguMiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr&q=Rua+Rio+Trombetas,+568,+Weissópolis,+Pinhais+-+PR,+83322-280" width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contato -->
+                <div class="space-y-6">
+                    <h3 class="text-bertoni-gold uppercase tracking-widest text-xs mb-4 font-bold">Contato</h3>
+                    <div class="group">
+                        <a href="https://wa.me/554135576291" target="_blank" rel="noopener noreferrer" class="text-xl font-light text-stone-200 hover:text-green-400 transition-colors duration-200 flex items-center gap-2">
+                            <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+                            </svg>
+                            <span>(41) 3557-6291</span>
+                        </a>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-xs text-stone-500 uppercase tracking-wider mb-2">Email</p>
+                        <a href="mailto:contato@bertoni.com.br" class="text-sm text-stone-200 hover:text-bertoni-gold transition-colors duration-200">contato@bertoni.com.br</a>
+                    </div>
+                </div>
+
+                <!-- Horário -->
+                <div class="space-y-4">
+                    <h3 class="text-bertoni-gold uppercase tracking-widest text-xs mb-4 font-bold">Horário</h3>
+                    <div class="mb-6">
+                        <p class="text-xs text-bertoni-gold uppercase tracking-wider mb-3 font-semibold">Loja física, iFood e 99Food</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center border-b border-stone-800 pb-2">
+                                <span class="text-sm text-stone-400">Terça a Sábado</span>
+                                <span class="text-sm text-stone-200 font-light">9h - 20h</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-stone-800 pb-2">
+                                <span class="text-sm text-stone-400">Domingo</span>
+                                <span class="text-sm text-stone-200 font-light">13h - 18h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-xs text-bertoni-gold uppercase tracking-wider mb-3 font-semibold">Delivery próprio</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center border-b border-stone-800 pb-2">
+                                <span class="text-sm text-stone-400">Terça a Sábado</span>
+                                <span class="text-sm text-stone-200 font-light">11h - 19h</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-stone-800 pb-2">
+                                <span class="text-sm text-stone-400">Domingo</span>
+                                <span class="text-sm text-stone-200 font-light">13h - 18h</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-1">
+                                <span class="text-sm text-stone-500 italic">Segunda - Fechado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-stone-800 text-center space-y-4">
+                <div class="mb-4">
+                    <a href="/src/pages/links.html" class="text-bertoni-gold hover:text-bertoni-gold-light text-sm uppercase tracking-wider font-medium transition-colors duration-300">
+                        Ver Todos os Links
+                    </a>
+                </div>
+                <p class="text-[10px] text-stone-600 uppercase tracking-widest">© 2026 Bertoni Doces & Café</p>
+                <p class="text-[9px] text-stone-700 tracking-wide">CNPJ: 41.480.511/0001-35</p>
+            </div>
+        </div>
+    </footer>
+</main>
+
+
+<script type="module" src="/src/js/cardapio.js"></script>
+</body>
+</html>

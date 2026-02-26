@@ -1,0 +1,37 @@
+# Robots.txt para Bertoni Doces & Café
+# Permitir todos os bots de busca
+
+User-agent: *
+Allow: /
+Allow: /src/pages/
+Allow: /assets/
+
+# Permitir especificamente bots importantes
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Desabilitar crawling de arquivos desnecessários
+Disallow: /node_modules/
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /src/js/
+Disallow: /src/styles/
+
+# Crawl-delay para respeitar o servidor
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://bertonidoces.com.br/sitemap.xml
+

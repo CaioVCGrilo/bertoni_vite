@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  position: relative;
+}
+
+/* Fundo difuso com gradientes sutis */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255,180,120,0.08), transparent 45%),
+    radial-gradient(circle at 50% 70%, rgba(255,200,150,0.05), transparent 55%),
+    radial-gradient(circle at center, rgba(255,255,255,0.04), transparent 60%),
+    #000;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center,
+              transparent 55%,
+              rgba(0,0,0,0.85) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* PDF Viewer Styles */
+.pdf-page-canvas {
+  margin: 0 auto;
+  display: block;
+  /* Tamanho fixo definido via JS inline style - não permitir mudanças */
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  /* Renderização de alta qualidade */
+  image-rendering: high-quality;
+  image-rendering: -webkit-optimize-contrast;
+
+  /* Anti-aliasing suave */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Garantir que a escala seja suave */
+  transform-origin: top center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  /* Permitir zoom e touch */
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Container do PDF - permitir zoom via pinch mas manter tamanho do conteúdo */
+#pdf-container {
+  touch-action: pan-x pan-y pinch-zoom;
+  -webkit-overflow-scrolling: touch;
+  /* Prevenir mudanças de layout */
+  position: relative;
+  contain: layout style;
+}
+
+#pdf-pages {
+  touch-action: pan-x pan-y pinch-zoom;
+  /* Garantir que o container não mude de tamanho */
+  min-height: 100%;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* Animações */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Página Principal -->
+  <url>
+    <loc>https://bertonidoces.com.br/</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://bertonidoces.com.br/assets/images/logo.png</image:loc>
+      <image:title>Bertoni Doces Café Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bertonidoces.com.br/assets/images/loja.jpg</image:loc>
+      <image:title>Bertoni Doces Café - Loja em Pinhais</image:title>
+    </image:image>
+  </url>
+
+  <!-- Página de Cardápio -->
+  <url>
+    <loc>https://bertonidoces.com.br/src/pages/cardapio.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Página Sobre -->
+  <url>
+    <loc>https://bertonidoces.com.br/src/pages/sobre.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://bertonidoces.com.br/assets/images/sobre-01.jpeg</image:loc>
+      <image:title>Bertoni Doces Café - Produtos</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bertonidoces.com.br/assets/images/sobre-02.jpeg</image:loc>
+      <image:title>Bertoni Doces Café - Ambiente</image:title>
+    </image:image>
+  </url>
+
+  <!-- Página de Links -->
+  <url>
+    <loc>https://bertonidoces.com.br/src/pages/links.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
+

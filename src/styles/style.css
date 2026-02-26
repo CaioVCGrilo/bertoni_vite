@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  position: relative;
+}
+
+/* Fundo difuso com gradientes sutis */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+          radial-gradient(circle at 50% 30%, rgba(255,180,120,0.08), transparent 45%),
+          radial-gradient(circle at 50% 70%, rgba(255,200,150,0.05), transparent 55%),
+          radial-gradient(circle at center, rgba(255,255,255,0.04), transparent 60%),
+          #000;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center,
+  transparent 55%,
+  rgba(0,0,0,0.85) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* PDF Viewer Styles */
+.pdf-page-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdf-page-canvas {
+  margin: 0 auto;
+  display: block;
+  flex-shrink: 0;
+  flex-grow: 0;
+  max-width: 100%;
+
+  /* Renderização de alta qualidade */
+  image-rendering: high-quality;
+  image-rendering: -webkit-optimize-contrast;
+
+  /* Anti-aliasing suave */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Garantir que a escala seja suave */
+  transform-origin: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  /* Desabilitar seleção */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Container do PDF - scroll fluido vertical */
+#pdf-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  max-height: 70vh;
+  min-height: 60vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  /* Esconder barra de scroll */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#pdf-container::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Container maior em desktop */
+@media (min-width: 768px) {
+  #pdf-container {
+    max-height: 90vh;
+    min-height: 85vh;
+  }
+}
+
+
+#pdf-pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 20px;
+  gap: 0;
+}
+
+/* Animações */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  50% {
+    opacity: 0.95;
+    box-shadow: 0 10px 15px -3px rgba(212, 175, 55, 0.3), 0 4px 6px -2px rgba(212, 175, 55, 0.2);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+@keyframes pulse-highlight {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05),
+                0 0 0 0 rgba(120, 83, 53, 0);
+    border-color: rgb(41, 37, 36);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(120, 83, 53, 0.3),
+                0 10px 10px -5px rgba(120, 83, 53, 0.2),
+                0 0 0 4px rgba(120, 83, 53, 0.25);
+    border-color: rgba(120, 83, 53, 0.7);
+  }
+}
+
+.animate-pulse-highlight {
+  animation: pulse-highlight 2.5s ease-in-out infinite;
+}
+

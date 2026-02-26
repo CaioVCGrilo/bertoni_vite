@@ -1,0 +1,20 @@
+{
+  "name": "bertoni-vite",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "postbuild": "node -e \"const fs=require('fs');const path=require('path');['cardapio','sobre','links'].forEach(page=>{const src='dist/src/pages/'+page+'.html';const dest='dist/'+page+'.html';if(fs.existsSync(src)){fs.renameSync(src,dest)}});if(fs.existsSync('dist/src/pages')){fs.rmSync('dist/src/pages',{recursive:true})};if(fs.existsSync('dist/src')){fs.rmSync('dist/src',{recursive:true})}\" && node fix-links.cjs",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^3.11.174"
+  }
+}

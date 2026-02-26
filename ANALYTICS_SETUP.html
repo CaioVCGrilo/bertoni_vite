@@ -1,0 +1,169 @@
+<!-- =====================================================
+     INSTRUÇÕES PARA IMPLEMENTAR ANALYTICS
+     ===================================================== -->
+
+<!--
+PASSO 1: Google Analytics 4
+----------------------------
+1. Acesse: https://analytics.google.com
+2. Crie uma conta
+3. Adicione uma propriedade
+4. Obtenha seu ID de medição (formato: G-XXXXXXXXXX)
+5. Substitua "G-XXXXXXXXXX" abaixo pelo seu ID real
+6. Copie todo o código abaixo e cole logo APÓS a tag <head> em:
+   - /index.html
+   - /src/pages/cardapio.html
+   - /src/pages/sobre.html
+   - /src/pages/links.html
+-->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- ===================================================== -->
+
+<!--
+PASSO 2: Google Tag Manager (OPCIONAL - mais avançado)
+-------------------------------------------------------
+1. Acesse: https://tagmanager.google.com
+2. Crie uma conta
+3. Crie um contêiner (Web)
+4. Obtenha seu ID (formato: GTM-XXXXXXX)
+5. Substitua "GTM-XXXXXXX" abaixo
+6. Adicione o código do HEAD logo após <head>
+7. Adicione o código do BODY logo após <body>
+-->
+
+<!-- Google Tag Manager - HEAD -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager - BODY (adicionar logo após <body>) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ===================================================== -->
+
+<!--
+PASSO 3: Microsoft Clarity (OPCIONAL - heatmaps grátis)
+--------------------------------------------------------
+1. Acesse: https://clarity.microsoft.com
+2. Crie um projeto
+3. Obtenha seu código de rastreamento
+4. Adicione no <head> de todas as páginas
+-->
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "SEU_CODIGO_AQUI");
+</script>
+
+<!-- ===================================================== -->
+
+<!--
+PASSO 4: Meta Pixel do Facebook (para anúncios)
+------------------------------------------------
+1. Acesse: https://business.facebook.com
+2. Vá em Gerenciador de Eventos
+3. Crie um Pixel
+4. Copie o código fornecido
+5. Adicione no <head> de todas as páginas
+-->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'SEU_PIXEL_ID_AQUI');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- ===================================================== -->
+
+<!--
+EVENTOS PERSONALIZADOS PARA RASTREAR
+-------------------------------------
+Adicione estes scripts nos botões importantes:
+
+Botão "Ver Cardápio":
+onclick="gtag('event', 'click', {'event_category': 'Cardapio', 'event_label': 'Ver Cardapio Home'});"
+
+Botão "Encomendas":
+onclick="gtag('event', 'conversion', {'event_category': 'Encomendas', 'event_label': 'Botao Encomendas'});"
+
+Botão "Delivery":
+onclick="gtag('event', 'conversion', {'event_category': 'Delivery', 'event_label': 'Botao Delivery'});"
+
+Link WhatsApp:
+onclick="gtag('event', 'contact', {'event_category': 'WhatsApp', 'event_label': 'Click WhatsApp'});"
+
+Link Instagram:
+onclick="gtag('event', 'social', {'event_category': 'Instagram', 'event_label': 'Click Instagram'});"
+-->
+
+<!-- ===================================================== -->
+
+<!--
+IMPORTANTE: LGPD - Lei Geral de Proteção de Dados
+--------------------------------------------------
+Após implementar Analytics, adicione um banner de cookies
+informando aos usuários sobre o uso de cookies e solicitando
+consentimento.
+
+Opções gratuitas:
+- Cookie Consent by Osano: https://www.osano.com/cookieconsent
+- Cookie Notice: https://wordpress.org/plugins/cookie-notice/
+-->
+
+<!-- Exemplo de Cookie Consent (substituir pelo código real) -->
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#1a1715",
+      "text": "#e7e5e4"
+    },
+    "button": {
+      "background": "#d4a574",
+      "text": "#000000"
+    }
+  },
+  "content": {
+    "message": "Este site usa cookies para melhorar sua experiência de navegação.",
+    "dismiss": "Entendi!",
+    "link": "Política de Privacidade",
+    "href": "/politica-privacidade.html"
+  }
+})
+});
+</script>
+
