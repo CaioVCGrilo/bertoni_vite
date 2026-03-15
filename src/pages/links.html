@@ -83,6 +83,49 @@
 
             <!-- Links Container -->
             <div class="space-y-4 mb-8">
+
+                <!-- Cardápio de Páscoa e Encomendas (temporário até 01/04/2026 20h Brasília) -->
+                <a id="btn-pascoa" href="https://encomendas.bertonidoces.com.br" target="_blank" rel="noopener noreferrer" class="hidden items-center justify-center w-full bg-stone-800 text-stone-200 px-4 sm:px-6 py-4 min-h-[72px] hover:bg-stone-700 hover:shadow-2xl hover:scale-105 transition-all duration-300 rounded-lg shadow-lg border border-stone-700 animate-pulse-highlight">
+                    <div class="flex items-center gap-2 sm:gap-4 w-full">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" viewBox="0 0 64 64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <!-- orelha esquerda -->
+                            <ellipse cx="22" cy="14" rx="5" ry="11" fill="currentColor" opacity="0.9"/>
+                            <ellipse cx="22" cy="14" rx="2.5" ry="7.5" fill="currentColor" opacity="0.4"/>
+                            <!-- orelha direita -->
+                            <ellipse cx="42" cy="14" rx="5" ry="11" fill="currentColor" opacity="0.9"/>
+                            <ellipse cx="42" cy="14" rx="2.5" ry="7.5" fill="currentColor" opacity="0.4"/>
+                            <!-- cabeça -->
+                            <ellipse cx="32" cy="32" rx="14" ry="13"/>
+                            <!-- olhos -->
+                            <circle cx="26.5" cy="29" r="2.5" fill="#1c1917"/>
+                            <circle cx="37.5" cy="29" r="2.5" fill="#1c1917"/>
+                            <circle cx="27.2" cy="28.3" r="0.8" fill="white"/>
+                            <circle cx="38.2" cy="28.3" r="0.8" fill="white"/>
+                            <!-- nariz -->
+                            <ellipse cx="32" cy="34" rx="2" ry="1.2" fill="#1c1917"/>
+                            <!-- bigodes -->
+                            <line x1="20" y1="33.5" x2="29" y2="34.5" stroke="#1c1917" stroke-width="1"/>
+                            <line x1="20" y1="36" x2="29" y2="35.5" stroke="#1c1917" stroke-width="1"/>
+                            <line x1="35" y1="34.5" x2="44" y2="33.5" stroke="#1c1917" stroke-width="1"/>
+                            <line x1="35" y1="35.5" x2="44" y2="36" stroke="#1c1917" stroke-width="1"/>
+                            <!-- boca -->
+                            <path d="M30 36.5 Q32 38.5 34 36.5" stroke="#1c1917" stroke-width="1" fill="none" stroke-linecap="round"/>
+                            <!-- corpo -->
+                            <ellipse cx="32" cy="52" rx="11" ry="9"/>
+                            <!-- rabinho -->
+                            <circle cx="43" cy="50" r="3.5"/>
+                            <!-- patinhas -->
+                            <ellipse cx="24" cy="59" rx="5" ry="2.5"/>
+                            <ellipse cx="40" cy="59" rx="5" ry="2.5"/>
+                        </svg>
+                        <div class="flex-1 text-center min-w-0">
+                            <p class="uppercase tracking-wider sm:tracking-widest text-xs sm:text-sm font-bold mb-1 whitespace-nowrap overflow-hidden text-ellipsis">Cardápio de Páscoa e Encomendas</p>
+                            <p class="text-xs text-stone-400 normal-case tracking-normal font-normal">Faça sua encomenda de páscoa ou de bolos festivos, sobremesas e docinhos através do site.</p>
+                        </div>
+                        <div class="w-5 sm:w-6 flex-shrink-0"></div>
+                    </div>
+                </a>
+
                 <!-- Delivery Próprio -->
                 <a href="https://delivery.bertonidoces.com.br" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full bg-stone-800 text-stone-200 px-4 sm:px-6 py-4 min-h-[72px] hover:bg-stone-700 hover:shadow-2xl hover:scale-105 transition-all duration-300 rounded-lg shadow-lg border border-stone-700 animate-pulse-highlight">
                     <div class="flex items-center gap-2 sm:gap-4 w-full">
@@ -143,7 +186,7 @@
                 </a>
 
                 <!-- Cardápio de Encomendas -->
-                <a href="https://encomendas.bertonidoces.com.br" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full bg-stone-800 text-stone-200 px-4 sm:px-6 py-4 min-h-[72px] hover:bg-stone-700 hover:shadow-2xl hover:scale-105 transition-all duration-300 rounded-lg shadow-lg border border-stone-700">
+                <a id="btn-encomendas" href="https://encomendas.bertonidoces.com.br" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full bg-stone-800 text-stone-200 px-4 sm:px-6 py-4 min-h-[72px] hover:bg-stone-700 hover:shadow-2xl hover:scale-105 transition-all duration-300 rounded-lg shadow-lg border border-stone-700">
                     <div class="flex items-center gap-2 sm:gap-4 w-full">
                         <svg class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -229,9 +272,28 @@
             })
         }
 
+        // Botão Páscoa temporário (até 01/04/2026 às 20h horário de Brasília)
+        function setupPascoaButton() {
+            // 01/04/2026 às 20h horário de Brasília (UTC-3) = 23h UTC
+            const prazo = new Date('2026-04-01T23:00:00Z')
+            const agora = new Date()
+            const btnPascoa = document.getElementById('btn-pascoa')
+            const btnEncomendas = document.getElementById('btn-encomendas')
+            if (agora < prazo) {
+                // Dentro do prazo: exibe Páscoa, oculta o original
+                if (btnPascoa) { btnPascoa.classList.remove('hidden'); btnPascoa.classList.add('flex') }
+                if (btnEncomendas) btnEncomendas.classList.add('hidden')
+            } else {
+                // Fora do prazo: oculta Páscoa, exibe o original
+                if (btnPascoa) { btnPascoa.classList.add('hidden'); btnPascoa.classList.remove('flex') }
+                if (btnEncomendas) btnEncomendas.classList.remove('hidden')
+            }
+        }
+
         // Inicializar
         document.addEventListener('DOMContentLoaded', () => {
             setupMobileMenu()
+            setupPascoaButton()
         })
     </script>
 </body>
